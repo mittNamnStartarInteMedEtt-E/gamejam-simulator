@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7qthd6e554ij"
+path="res://.godot/imported/victory.ogg-9abb0f3e8b17160cf2b5bbbeae26414b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/casino-1/OGG/Turns & Stingers/victory.ogg"
+dest_files=["res://.godot/imported/victory.ogg-9abb0f3e8b17160cf2b5bbbeae26414b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
