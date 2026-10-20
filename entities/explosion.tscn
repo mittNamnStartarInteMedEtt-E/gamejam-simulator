@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://0ajs64r7jl4t"]
+
+[ext_resource type="Script" uid="uid://b24bryfm5822v" path="res://entities/explosion.gd" id="1_4i30t"]
+[ext_resource type="Texture2D" uid="uid://dx0afvbm6t7i3" path="res://assets/gfx/explosion.png" id="1_t31lu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oa5gs"]
+radius = 73.00685
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i30t"]
+atlas = ExtResource("1_t31lu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d04qs"]
+atlas = ExtResource("1_t31lu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb6py"]
+atlas = ExtResource("1_t31lu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oki0m"]
+atlas = ExtResource("1_t31lu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lfky"]
+atlas = ExtResource("1_t31lu")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpral"]
+atlas = ExtResource("1_t31lu")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oa5gs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i30t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d04qs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb6py")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oki0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lfky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpral")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Explosion" type="Area2D"]
+script = ExtResource("1_4i30t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oa5gs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oa5gs")
+frame = 1
+frame_progress = 0.64850825
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
