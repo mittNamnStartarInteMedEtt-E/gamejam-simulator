@@ -1,0 +1,13 @@
+res://main_game.tscn
+res://assets/gfx/tilesets/template/tileset_basic.tres
+res://structures/games/slot_machine_empty.tscn
+res://structures/games/casino_cage.tscn
+res://structures/games/plant.tscn
+res://structures/games/dice.tscn
+res://structures/games/trashcan.tscn
+res://structures/games/trashcan2.tscn
+res://structures/games/security_camera.tscn
+res://structures/games/chips.tscn
+res://structures/games/slot_machine.tscn
+res://structures/games/slot_machine2.tscn
+res://structures/games/roulette_table.tscn
