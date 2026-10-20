@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2gvm04fe4wc4"
-path="res://.godot/imported/tileset_water_animated.png-c904333bf04713ead75367b88484a276.ctex"
+path="res://.godot/imported/tileset_water_animated.png-3cfa0be24af8012e003972fda990d106.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gfx/tilesets/tileset_water_animated.png"
-dest_files=["res://.godot/imported/tileset_water_animated.png-c904333bf04713ead75367b88484a276.ctex"]
+source_file="res://assets/gfx/tilesets/template/tileset_water_animated.png"
+dest_files=["res://.godot/imported/tileset_water_animated.png-3cfa0be24af8012e003972fda990d106.ctex"]
 
 [params]
 

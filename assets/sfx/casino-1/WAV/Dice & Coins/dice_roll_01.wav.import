@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwiui5rdknxc5"
+path="res://.godot/imported/dice_roll_01.wav-e23ddbc95e10eec7b0a3af4c58e53904.sample"
+
+[deps]
+
+source_file="res://assets/sfx/casino-1/WAV/Dice & Coins/dice_roll_01.wav"
+dest_files=["res://.godot/imported/dice_roll_01.wav-e23ddbc95e10eec7b0a3af4c58e53904.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

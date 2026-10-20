@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjkeml2mvgtrw"
-path="res://.godot/imported/tileset_mountains.png-d05d6b45f07c2ac22e12665ef4ef8f63.ctex"
+path="res://.godot/imported/tileset_mountains.png-57fba5d7e5a7bfe77a493dbc22309c28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gfx/tilesets/tileset_mountains.png"
-dest_files=["res://.godot/imported/tileset_mountains.png-d05d6b45f07c2ac22e12665ef4ef8f63.ctex"]
+source_file="res://assets/gfx/tilesets/template/tileset_mountains.png"
+dest_files=["res://.godot/imported/tileset_mountains.png-57fba5d7e5a7bfe77a493dbc22309c28.ctex"]
 
 [params]
 

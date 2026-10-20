@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cc2amvfxkapts"
+path="res://.godot/imported/roulette_spin.ogg-cf8f95ad31c6461fb27119bce4ae9fc3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/casino-1/OGG/Roulette & Wins/roulette_spin.ogg"
+dest_files=["res://.godot/imported/roulette_spin.ogg-cf8f95ad31c6461fb27119bce4ae9fc3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
