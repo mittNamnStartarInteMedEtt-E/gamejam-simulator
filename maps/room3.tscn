@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://b2886os2h0nc6" path="res://assets/gfx/tilesets/casino-1/casino-1-tileset.tres" id="1_kwqtm"]
 
-[node name="Room2" type="Node2D" unique_id=1868604109]
+[node name="Room3" type="Node2D" unique_id=1868604109]
 
 [node name="RedFloor" type="TileMapLayer" parent="." unique_id=411365052]
 position = Vector2(0, 16)
