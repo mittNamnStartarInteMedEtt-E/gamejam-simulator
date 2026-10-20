@@ -1,12 +1,22 @@
 [gd_scene format=3 uid="uid://qcb3yrmljqu5"]
 
+[ext_resource type="PackedScene" uid="uid://b0iokode56f3h" path="res://structures/games/blackjack_table.tscn" id="2_6bm6p"]
 [ext_resource type="PackedScene" uid="uid://doibdmgdb5ikg" path="res://player/player.tscn" id="2_ykeeq"]
 [ext_resource type="PackedScene" uid="uid://cr21p22s02ut2" path="res://maps/room1.tscn" id="2_yx7mw"]
+[ext_resource type="Script" uid="uid://fcbgswqtq4is" path="res://placement_manager.gd" id="4_6bm6p"]
 
 [node name="MainGame" type="Node2D" unique_id=870690611]
 
-[node name="Room1" parent="." unique_id=1246615646 instance=ExtResource("2_yx7mw")]
+[node name="Player" parent="." unique_id=2050569286 instance=ExtResource("2_ykeeq")]
+
+[node name="Rooms" type="Node2D" parent="." unique_id=2112580495]
+
+[node name="Room1" parent="Rooms" unique_id=1246615646 instance=ExtResource("2_yx7mw")]
 z_index = -1
 position = Vector2(176, 272)
 
-[node name="Player" parent="." unique_id=2050569286 instance=ExtResource("2_ykeeq")]
+[node name="PlacementManager" type="Node2D" parent="." unique_id=685785412]
+script = ExtResource("4_6bm6p")
+table_scene = ExtResource("2_6bm6p")
+
+[node name="Structures" type="Node2D" parent="PlacementManager" unique_id=2060396754]
