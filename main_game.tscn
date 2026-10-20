@@ -1,17 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://qcb3yrmljqu5"]
+[gd_scene format=3 uid="uid://qcb3yrmljqu5"]
 
-[ext_resource type="PackedScene" uid="uid://5ld1wjcdkgtd" path="res://entities/player.tscn" id="1_1oj5k"]
-[ext_resource type="PackedScene" uid="uid://culq1j3rwypp2" path="res://entities/bomb_active.tscn" id="2_ykeeq"]
 [ext_resource type="PackedScene" uid="uid://cr21p22s02ut2" path="res://maps/stage1.tscn" id="2_yx7mw"]
 
-[node name="MainGame" type="Node2D"]
+[node name="MainGame" type="Node2D" unique_id=870690611]
 
-[node name="Player" parent="." instance=ExtResource("1_1oj5k")]
-position = Vector2(391, 236)
-bomb_scene = ExtResource("2_ykeeq")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3.5, 3.5)
-
-[node name="Stage1" parent="." instance=ExtResource("2_yx7mw")]
+[node name="Stage1" parent="." unique_id=1246615646 instance=ExtResource("2_yx7mw")]
 z_index = -1
