@@ -17,5 +17,5 @@ func _input_event(_viewport, event, _shape_idx):
 			gui_instance.get_child(0).get_child(0).room_bought.connect(_on_room_bought)
 
 func _on_room_bought() -> void:
-	get_parent().get_child(2) # Delete right closed door
+	get_parent().get_child(2).queue_free() # Delete right closed door
 	queue_free()
