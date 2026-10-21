@@ -1,5 +1,6 @@
 extends Control
 
+signal room_bought
 
 func _ready() -> void:
 	for button in [get_parent().get_child(1), $Room2Button, $Room3Button, $Room4Button]:
@@ -36,8 +37,8 @@ func _on_button_pressed(button_name: String) -> void:
 			var instance = Globals.room2_scene.instantiate()
 			get_tree().root.add_child(instance)
 			instance.position = Globals.room_location_to_build_4 + Vector2(96, -272)
-
-			print("open door")
+			
+			room_bought.emit()
 			get_parent().queue_free()
 		"Room3Button":
 			# check for collision with other rooms
@@ -46,7 +47,8 @@ func _on_button_pressed(button_name: String) -> void:
 			var instance = Globals.room3_scene.instantiate()
 			get_tree().root.add_child(instance)
 			instance.position = Globals.room_location_to_build_4 + Vector2(96, -272)
-			print("open door")
+			
+			room_bought.emit()
 			get_parent().queue_free()
 		"Room4Button":
 			# check for collision with other rooms
@@ -55,5 +57,6 @@ func _on_button_pressed(button_name: String) -> void:
 			var instance = Globals.room4_scene.instantiate()
 			get_tree().root.add_child(instance)
 			instance.position = Globals.room_location_to_build_4 + Vector2(96, -272)
-			print("open door")
+			
+			room_bought.emit()
 			get_parent().queue_free()

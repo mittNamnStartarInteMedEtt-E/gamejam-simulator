@@ -18,3 +18,9 @@ func _input_event(_viewport, event, _shape_idx):
 			gui_instance.global_position = get_global_mouse_position()
 			
 			Globals.room_location_to_build = global_position
+			
+			gui_instance.get_child(0).get_child(0).room_bought.connect(_on_room_bought)
+
+func _on_room_bought() -> void:
+	get_parent().get_child(2) # Delete right closed door
+	queue_free()
