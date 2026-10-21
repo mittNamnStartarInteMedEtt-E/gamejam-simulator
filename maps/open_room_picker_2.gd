@@ -7,7 +7,7 @@ var gui_instance
 func _ready() -> void:
 	pass # Replace with function body.
 
-func _input_event(viewport, event, shape_idx):
+func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if is_instance_valid(gui_instance):
