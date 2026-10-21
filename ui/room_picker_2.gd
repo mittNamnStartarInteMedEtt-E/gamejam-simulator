@@ -31,9 +31,6 @@ func _on_button_pressed(button_name: String) -> void:
 		"CloseButton":
 			get_parent().queue_free()
 		"Room2Button":
-			# check for collision with other rooms
-			print("Place room 2 at ", Globals.room_location_to_build_2)
-
 			var instance = Globals.room2_scene.instantiate()
 			get_tree().root.add_child(instance)
 			instance.position = Globals.room_location_to_build_2 + Vector2(96, -272)
@@ -41,9 +38,6 @@ func _on_button_pressed(button_name: String) -> void:
 			room_bought.emit()
 			get_parent().queue_free()
 		"Room3Button":
-			# check for collision with other rooms
-			print("Place room 3 at ", Globals.room_location_to_build_2)
-			
 			var instance = Globals.room3_scene.instantiate()
 			get_tree().root.add_child(instance)
 			instance.position = Globals.room_location_to_build_2 + Vector2(96, -272)
@@ -51,9 +45,6 @@ func _on_button_pressed(button_name: String) -> void:
 			room_bought.emit()
 			get_parent().queue_free()
 		"Room4Button":
-			# check for collision with other rooms
-			print("Place room 4 at ", Globals.room_location_to_build_2)
-			
 			var instance = Globals.room4_scene.instantiate()
 			get_tree().root.add_child(instance)
 			instance.position = Globals.room_location_to_build_2 + Vector2(96, -272)
