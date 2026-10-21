@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://wtqy16yv0esw"]
 
 [ext_resource type="TileSet" uid="uid://b2886os2h0nc6" path="res://assets/gfx/tilesets/casino-1/casino-1-tileset.tres" id="1_kwqtm"]
+[ext_resource type="Script" uid="uid://ba3cif5et6miq" path="res://maps/open_room_picker_3.gd" id="2_o788a"]
 
 [node name="Room3" type="Node2D" unique_id=1868604109]
 
@@ -20,13 +21,13 @@ tile_map_data = PackedByteArray("AAAZAOr/AAAFABcAAAAaAOr/AAAFABcAAAAbAOr/AAAFABc
 tile_set = ExtResource("1_kwqtm")
 
 [node name="RightDoorClosed" type="TileMapLayer" parent="." unique_id=119715649]
-visible = false
 position = Vector2(0, 48)
+tile_map_data = PackedByteArray("AAAaAOj/AAADAB0AAAAaAOn/AAADAB4AAAAaAOr/AAADAB8AAAAbAOj/AAAEAB0AAAAbAOn/AAAEAB4AAAAbAOr/AAAEAB8AAAAcAOj/AAAFAB0AAAAcAOn/AAAFAB4AAAAcAOr/AAAFAB8AAAA=")
 tile_set = ExtResource("1_kwqtm")
 
 [node name="LeftDoorClosed" type="TileMapLayer" parent="." unique_id=1103638478]
-visible = false
 position = Vector2(0, 64)
+tile_map_data = PackedByteArray("AAAHAOf/AAAAAB0AAAAHAOj/AAAAAB4AAAAHAOn/AAAAAB8AAAAIAOj/AAABAB4AAAAIAOn/AAABAB8AAAAJAOf/AAACAB0AAAAJAOj/AAACAB4AAAAJAOn/AAACAB8AAAAIAOf/AAABAB0AAAA=")
 tile_set = ExtResource("1_kwqtm")
 
 [node name="Walls" type="TileMapLayer" parent="." unique_id=856176880]
@@ -38,3 +39,10 @@ tile_set = ExtResource("1_kwqtm")
 position = Vector2(16, 16)
 tile_map_data = PackedByteArray("AAADAP7/AAA/ABsAAAACAP7/AAA/ABsAAAABAP7/AAA/ABsAAAAAAP3/AAA/ABsAAAAEAP3/AAA/ABsAAAA=")
 tile_set = ExtResource("1_kwqtm")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1674482876]
+position = Vector2(288, -80)
+script = ExtResource("2_o788a")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=102476586]
+polygon = PackedVector2Array(137, -251, 137, -208, 167, -208, 167, -251)
