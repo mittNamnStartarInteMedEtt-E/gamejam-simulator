@@ -3,7 +3,7 @@ extends Camera2D
 
 @export var speed := 10.0
 @export var enable_drag := true
-@export var drag_action := "left_click"
+@export var drag_action := "scroll_click"
 
 @export var enable_zoom := true
 @export var zoom_step := 0.1
@@ -42,4 +42,11 @@ func _handle_zoom_input(event: InputEvent) -> void:
 	else:
 		return
 	new_zoom = clampf(new_zoom, min_zoom, max_zoom)
+	
+	# world point under the cursor before zooming
+	var mouse_before := get_global_mouse_position()
 	zoom = Vector2(new_zoom, new_zoom)
+	# world point under the cursor after zooming
+	var mouse_after := get_global_mouse_position()
+	# move the camera by the drift so the point under the cursor stays put
+	position += mouse_before - mouse_after
