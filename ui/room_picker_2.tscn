@@ -41,7 +41,7 @@ offset_top = 0.5
 offset_right = 48.5
 offset_bottom = 31.5
 grow_horizontal = 2
-text = "Room 1"
+text = "Room 2"
 
 [node name="Room3Button" type="Button" parent="Panel/RoomBuyButtons" unique_id=1675114262]
 layout_mode = 1
@@ -55,9 +55,9 @@ offset_top = -31.0
 offset_right = 47.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Room 2"
+text = "Room 3"
 
-[node name="Button" type="Button" parent="Panel" unique_id=316821139]
+[node name="CloseButton" type="Button" parent="Panel" unique_id=316821139]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -68,7 +68,7 @@ offset_right = -3.0
 offset_bottom = 25.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 10
-text = "x"
+text = "X"
 clip_text = true
 expand_icon = true
 
