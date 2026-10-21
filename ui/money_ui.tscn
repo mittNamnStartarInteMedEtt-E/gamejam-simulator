@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ba2er2wt1bicl"]
+
+[ext_resource type="Texture2D" uid="uid://docwnusmguid6" path="res://assets/gfx/Grön sedelbunt med dollartecken.png" id="1_am2rb"]
+
+[node name="MoneyContainer" type="Control" unique_id=1527340979]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1940.0
+offset_top = 20.0
+offset_right = -143.0
+offset_bottom = 907.0
+grow_horizontal = 0
+
+[node name="MoneyLabel" type="Label" parent="." unique_id=1613529142]
+layout_mode = 0
+offset_top = 426.0
+offset_right = 27.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 24
+text = "$0"
+
+[node name="MoneyIcon" type="TextureRect" parent="." unique_id=513824146]
+custom_minimum_size = Vector2(64, 40)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 111.0
+offset_right = 1359.0
+offset_bottom = 887.0
+texture = ExtResource("1_am2rb")
+expand_mode = 1
