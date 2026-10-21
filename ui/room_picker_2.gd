@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready() -> void:
-	for button in [get_parent().get_child(1), $Room2Button, $Room3Button]:
+	for button in [get_parent().get_child(1), $Room2Button, $Room3Button, $Room4Button]:
 		button.mouse_entered.connect(_on_button_hover.bind(button.name))
 		button.mouse_exited.connect(_on_button_exit.bind(button.name))
 		button.pressed.connect(_on_button_pressed.bind(button.name))
@@ -13,6 +13,8 @@ func _on_button_hover(button_name: String) -> void:
 			print("show transparent room 2")
 		"Room3Button":
 			print("show transparent room 3")
+		"Room4Button":
+			print("show transparent room 4")
 
 func _on_button_exit(button_name: String) -> void:
 	match button_name:
@@ -20,6 +22,8 @@ func _on_button_exit(button_name: String) -> void:
 			print("hide transparent room 2")
 		"Room3Button":
 			print("hide transparent room 3")
+		"Room4Button":
+			print("hide transparent room 4")
 
 func _on_button_pressed(button_name: String) -> void:
 	match button_name:
@@ -40,6 +44,15 @@ func _on_button_pressed(button_name: String) -> void:
 			print("Place room 3 at ", Globals.room_location_to_build_2)
 			
 			var instance = Globals.room3_scene.instantiate()
+			get_tree().root.add_child(instance)
+			instance.position = Globals.room_location_to_build_2 + Vector2(96, -272)
+			print("open door")
+			get_parent().queue_free()
+		"Room4Button":
+			# check for collision with other rooms
+			print("Place room 4 at ", Globals.room_location_to_build_2)
+			
+			var instance = Globals.room4_scene.instantiate()
 			get_tree().root.add_child(instance)
 			instance.position = Globals.room_location_to_build_2 + Vector2(96, -272)
 			print("open door")
