@@ -16,3 +16,5 @@ func _input_event(viewport, event, shape_idx):
 			gui_instance = gui_scene.instantiate()
 			get_tree().current_scene.add_child(gui_instance)
 			gui_instance.global_position = get_global_mouse_position()
+			
+			Globals.room_location_to_build = global_position

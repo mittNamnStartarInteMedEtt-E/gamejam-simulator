@@ -25,10 +25,16 @@ func _on_button_pressed(button_name: String) -> void:
 	match button_name:
 		"Room2Button":
 			# check for collision with other rooms
-			print("place room 2")
+			print("Place room 2 at ", Globals.room_location_to_build)
+
+			var instance = Globals.room2_scene.instantiate()
+			get_tree().root.add_child(instance)
+			instance.position = Globals.room_location_to_build + Vector2(96, -272)
+
 			print("open door")
+			# get_node("/root/Room1/closed right door").queue_free()
+			get_parent().queue_free()
 		"Room3Button":
 			# check for collision with other rooms
-			print("place room 3")
-			print("open door")
-	
+			print("Place room 3 at ", Globals.room_location_to_build)
+			get_parent().queue_free()
