@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://b0iokode56f3h"]
 
 [ext_resource type="Texture2D" uid="uid://bpfftllbjawtf" path="res://assets/gfx/tilesets/casino-1/2D_TopDown_Tileset_Casino_640x512.png" id="1_3vmur"]
+[ext_resource type="Script" uid="uid://xtkd2su774i5" path="res://structures/income.gd" id="2_77ebs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7mfn"]
 texture = ExtResource("1_3vmur")
@@ -1251,3 +1252,8 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Footprint" unique_id=1813673016]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_w7w2x")
+
+[node name="Income" type="Node" parent="." unique_id=1406976727]
+script = ExtResource("2_77ebs")
+income = 20
+interval = 3.0

@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cnldfhe8vaumi" path="res://structures/games/slot_machine_empty.tscn" id="13_wt57k"]
 [ext_resource type="PackedScene" uid="uid://elj58bmjxkmr" path="res://structures/games/trashcan2.tscn" id="14_pk5u2"]
 [ext_resource type="PackedScene" uid="uid://c3bsspiefgn5l" path="res://structures/games/trashcan.tscn" id="15_lght5"]
+[ext_resource type="PackedScene" uid="uid://bymslxyqcm8w1" path="res://ui/hud.tscn" id="18_ih6an"]
 
 [node name="MainGame" type="Node2D" unique_id=870690611]
 
@@ -38,6 +39,7 @@ script = ExtResource("4_6bm6p")
 [node name="BuildUI" parent="PlacementManager" unique_id=2013705883 instance=ExtResource("4_an1vu")]
 
 [node name="Templates" type="Node" parent="." unique_id=1356289960]
+process_mode = 4
 
 [node name="BlackJackTable" parent="Templates" unique_id=612983182 groups=["structure_templates"] instance=ExtResource("2_6bm6p")]
 visible = false
@@ -85,3 +87,5 @@ visible = false
 position = Vector2(-999, -99999)
 
 [node name="RoomPreviews" type="Node2D" parent="." unique_id=176163025]
+
+[node name="HUD" parent="." unique_id=1276046299 instance=ExtResource("18_ih6an")]

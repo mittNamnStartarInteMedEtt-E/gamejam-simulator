@@ -14,8 +14,10 @@ extends Node2D
 var placed := {}
 var local_cells: Array[Vector2i] = []
 var ghost: Node2D
+var ghost_layer := 0
 var ghost_offset := Vector2.ZERO
 var is_placing := false
+var _next_order := 0
 
 # current selection (set by the build UI cards)
 var selected_scene: PackedScene
@@ -48,6 +50,7 @@ func _select(scene: PackedScene, cost: int) -> void:
 	var info := _info_for(scene.resource_path)
 	local_cells.assign(info["cells"])
 	ghost_offset = info["offset"]
+	ghost_layer = int(info.get("layer", 0))
 
 	if ghost:
 		ghost.queue_free()
@@ -66,7 +69,9 @@ func _make_ghost(scene: PackedScene) -> Node2D:
 func _info_for(path: String) -> Dictionary:
 	if not footprints.has(path):
 		var probe := (load(path) as PackedScene).instantiate() as Node2D
-		footprints[path] = _compute_info(probe)
+		var info: Dictionary = _compute_info(probe)
+		info["layer"] = int(probe.get_meta("layer", 0))
+		footprints[path] = info
 		probe.free()  # never entered the tree, so free() is safe
 	return footprints[path]
 	
@@ -140,11 +145,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		return
 
-	# place structure on click
+	# place structure on left click
 	if is_placing and event.is_action_pressed("left_click"):
 		_try_place()
 		get_viewport().set_input_as_handled()
+		return
 
+	# destroy structure on right click
+	if is_placing and event.is_action_pressed("right_click"):
+		_try_destroy()
+		get_viewport().set_input_as_handled()
+		return
+		
 func _process(_delta: float) -> void:
 	if not is_placing or ghost == null:
 		return
@@ -198,13 +210,35 @@ func _can_place(origin: Vector2i) -> bool:
 		var cell := origin + c
 		if placed.has(cell):
 			return false
+		if placed.has(Vector3i(cell.x, cell.y, ghost_layer)):
+			return false
 		if not _is_cell_placeable(cell):
 			return false
 	return true
 
+# attempt to destroy a structure at the mouse position
+func _try_destroy() -> void:
+	var cell := _world_to_cell(get_global_mouse_position())
+	
+	# Check the current ghost layer first
+	var key := Vector3i(cell.x, cell.y, ghost_layer)
+	if placed.has(key):
+		placed[key].queue_free()
+		return
+		
+	# Fallback: check if there's a structure on any other layer at this cell
+	for k in placed.keys():
+		if k.x == cell.x and k.y == cell.y:
+			placed[k].queue_free()
+			return
+
 # attempt structure placement at mouse position
 func _try_place() -> void:
-	if selected_scene == null or Globals.money < selected_cost:
+	if Globals.money < selected_cost:
+		Money._too_expensive()
+		return
+	
+	if selected_scene == null:
 		return
 	var origin := _world_to_cell(get_global_mouse_position())
 	if not _can_place(origin):
@@ -221,14 +255,43 @@ func _try_place() -> void:
 func _register(node: Node2D) -> void:
 	var info := _info_for(node.scene_file_path)
 	var offset: Vector2 = info["offset"]
-	# round, so slightly misaligned existing structures snap to the nearest cell
+	var layer: int = int(info.get("layer", 0))
 	var origin := Vector2i(((node.global_position + offset) / tile_size).round())
-	var cells: Array[Vector2i] = []
-	for c in info["cells"]:
-		cells.append(origin + c)
-		placed[origin + c] = node
 
-	# erase occupied grid entries when the structure node is deleted
+	var keys: Array[Vector3i] = []
+	var max_cell_y := origin.y
+	for c in info["cells"]:
+		var cell: Vector2i = origin + c
+		var key := Vector3i(cell.x, cell.y, layer)
+		keys.append(key)
+		placed[key] = node
+		max_cell_y = maxi(max_cell_y, cell.y)
+
+	node.z_index = -layer # layers still decide front/back groups
+	
+	var bottom_y := float((max_cell_y + 1) * tile_size)
+	node.set_meta("sort_y", bottom_y)
+	node.set_meta("layer", layer)
+
 	node.tree_exited.connect(func():
-		for c in cells:
-			placed.erase(c))
+		for k in keys:
+			placed.erase(k))
+
+	_resort()
+
+# reorder children so structures with a lower bottom edge are drawn last (on top)
+func _resort() -> void:
+	var kids := structures_folder.get_children()
+	kids.sort_custom(func(a, b):
+		var la := int(a.get_meta("layer", 0))
+		var lb := int(b.get_meta("layer", 0))
+		if la != lb:
+			return la < lb # Different layers sort by layer first
+		
+		var ya := float(a.get_meta("sort_y", 0.0))
+		var yb := float(b.get_meta("sort_y", 0.0))
+		return ya < yb)
+		
+	for i in kids.size():
+		if kids[i].get_index() != i:   # only move what actually changed
+			structures_folder.move_child(kids[i], i)

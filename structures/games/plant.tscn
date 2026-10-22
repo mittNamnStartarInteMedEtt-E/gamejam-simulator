@@ -2470,7 +2470,7 @@ sources/0 = SubResource("TileSetAtlasSource_d7mfn")
 sources/1 = SubResource("TileSetAtlasSource_hih37")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lff6y"]
-size = Vector2(16, 32)
+size = Vector2(16, 16)
 
 [node name="Plant" type="Node2D" unique_id=612983182]
 z_index = 3
@@ -2487,5 +2487,4 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Footprint" unique_id=64884758]
-position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_lff6y")

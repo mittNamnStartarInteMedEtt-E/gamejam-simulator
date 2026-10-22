@@ -28,6 +28,7 @@ grow_vertical = 0
 [node name="Cards" type="HBoxContainer" parent="Panel" unique_id=1533642169]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/separation = 8
 alignment = 1
 
@@ -38,35 +39,44 @@ structure_scene = ExtResource("3_obkte")
 [node name="Trashcan2" parent="Panel/Cards" unique_id=1015891221 instance=ExtResource("2_5lqpn")]
 layout_mode = 2
 structure_scene = ExtResource("4_0r80n")
+cost = 30
 
 [node name="BlackjackTable" parent="Panel/Cards" unique_id=1090932825 instance=ExtResource("2_5lqpn")]
 layout_mode = 2
 structure_scene = ExtResource("5_ijc6u")
+cost = 400
 
 [node name="CasinoCage" parent="Panel/Cards" unique_id=144126841 instance=ExtResource("2_5lqpn")]
 layout_mode = 2
 structure_scene = ExtResource("6_rlott")
+cost = 100
 
 [node name="GiantDice" parent="Panel/Cards" unique_id=746307360 instance=ExtResource("2_5lqpn")]
 layout_mode = 2
 structure_scene = ExtResource("7_jptmx")
+cost = 300
 
 [node name="PottedPlant" parent="Panel/Cards" unique_id=109503764 instance=ExtResource("2_5lqpn")]
 layout_mode = 2
 structure_scene = ExtResource("8_obkte")
+cost = 120
 
 [node name="RouletteTable" parent="Panel/Cards" unique_id=939877583 instance=ExtResource("2_5lqpn")]
 layout_mode = 2
 structure_scene = ExtResource("9_0r80n")
+cost = 70000
 
 [node name="SlotMachine1" parent="Panel/Cards" unique_id=1548141010 instance=ExtResource("2_5lqpn")]
 layout_mode = 2
 structure_scene = ExtResource("10_ijc6u")
+cost = 10000
 
 [node name="SlotMachine2" parent="Panel/Cards" unique_id=541014576 instance=ExtResource("2_5lqpn")]
 layout_mode = 2
 structure_scene = ExtResource("11_rlott")
+cost = 70000
 
 [node name="SlotMachine3" parent="Panel/Cards" unique_id=516463315 instance=ExtResource("2_5lqpn")]
 layout_mode = 2
 structure_scene = ExtResource("12_jptmx")
+cost = 3000
