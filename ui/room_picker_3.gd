@@ -1,5 +1,8 @@
 extends Control
 
+@onready var room_previews_node = get_node("/root/MainGame/RoomPreviews")
+@onready var rooms_node = get_node("/root/MainGame/Rooms")
+
 signal room_bought
 
 func _ready() -> void:
@@ -11,20 +14,24 @@ func _ready() -> void:
 func _on_button_hover(button_name: String) -> void:
 	match button_name:
 		"Room2Button":
-			print("show transparent room 2")
+			var instance = Globals.room2_scene.instantiate()
+			room_previews_node.add_child(instance)
+			instance.position = Globals.room_location_to_build_3 + Vector2(96, -272)
+			instance.modulate = Color(0.5, 1, 0.5, 0.5)
 		"Room3Button":
-			print("show transparent room 3")
+			var instance = Globals.room3_scene.instantiate()
+			room_previews_node.add_child(instance)
+			instance.position = Globals.room_location_to_build_3 + Vector2(96, -272)
+			instance.modulate = Color(0.5, 1, 0.5, 0.5)
 		"Room4Button":
-			print("show transparent room 4")
+			var instance = Globals.room4_scene.instantiate()
+			room_previews_node.add_child(instance)
+			instance.position = Globals.room_location_to_build_3 + Vector2(96, -272)
+			instance.modulate = Color(0.5, 1, 0.5, 0.5)
 
 func _on_button_exit(button_name: String) -> void:
-	match button_name:
-		"Room2Button":
-			print("hide transparent room 2")
-		"Room3Button":
-			print("hide transparent room 3")
-		"Room4Button":
-			print("hide transparent room 4")
+	if button_name == "Room2Button" or button_name == "Room3Button" or button_name == "Room4Button":
+		room_previews_node.get_child(-1).queue_free()
 
 func _on_button_pressed(button_name: String) -> void:
 	match button_name:
@@ -32,21 +39,21 @@ func _on_button_pressed(button_name: String) -> void:
 			get_parent().queue_free()
 		"Room2Button":
 			var instance = Globals.room2_scene.instantiate()
-			get_tree().root.add_child(instance)
+			rooms_node.add_child(instance)
 			instance.position = Globals.room_location_to_build_3 + Vector2(96, -272)
 			
 			room_bought.emit()
 			get_parent().queue_free()
 		"Room3Button":
 			var instance = Globals.room3_scene.instantiate()
-			get_tree().root.add_child(instance)
+			rooms_node.add_child(instance)
 			instance.position = Globals.room_location_to_build_3 + Vector2(96, -272)
 			
 			room_bought.emit()
 			get_parent().queue_free()
 		"Room4Button":
 			var instance = Globals.room4_scene.instantiate()
-			get_tree().root.add_child(instance)
+			rooms_node.add_child(instance)
 			instance.position = Globals.room_location_to_build_3 + Vector2(96, -272)
 			
 			room_bought.emit()

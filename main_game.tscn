@@ -77,3 +77,5 @@ position = Vector2(-999, -99999)
 [node name="Trashcan" parent="Templates" unique_id=653494559 groups=["structure_templates"] instance=ExtResource("15_lght5")]
 visible = false
 position = Vector2(-999, -99999)
+
+[node name="RoomPreviews" type="Node2D" parent="." unique_id=176163025]
