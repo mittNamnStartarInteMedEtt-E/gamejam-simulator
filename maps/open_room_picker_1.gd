@@ -1,6 +1,6 @@
 extends Area2D
 
-var gui_scene = preload("res://ui/room_picker.tscn")
+var gui_scene = preload("res://ui/room_picker_1.tscn")
 var gui_instance
 
 func _input_event(_viewport, event, _shape_idx):
