@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 Globals="*uid://ctho5l84ix84i"
 Money="*uid://cprnqewv5fyd"
+Music="*uid://c35kx1aimywid"
 
 [display]
 
@@ -91,3 +92,4 @@ scroll_click={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method.mobile="forward_plus"
 anti_aliasing/screen_space_roughness_limiter/enabled=false
+environment/defaults/default_clear_color=Color(0.54623234, 0.0017816079, 0.7526588, 1)

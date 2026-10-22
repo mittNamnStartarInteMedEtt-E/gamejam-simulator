@@ -2469,9 +2469,22 @@ texture = ExtResource("2_yoxsr")
 sources/0 = SubResource("TileSetAtlasSource_d7mfn")
 sources/1 = SubResource("TileSetAtlasSource_hih37")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3ap7"]
+size = Vector2(112, 48)
+
 [node name="CasinoCage" type="Node2D" unique_id=612983182]
 z_index = 3
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=997662173]
 tile_map_data = PackedByteArray("AAD+//7/AQAgAAUAAAD+////AQAgAAYAAAD+/wAAAQAgAAcAAAD+/wEAAQAgAAgAAAD///7/AQAhAAUAAAD/////AQAhAAYAAAD//wAAAQAhAAcAAAD//wEAAQAhAAgAAAAAAAAAAQAiAAcAAAAAAAEAAQAiAAgAAAABAAAAAQAjAAcAAAABAAEAAQAjAAgAAAACAAAAAQAkAAcAAAACAAEAAQAkAAgAAAADAP7/AQAlAAUAAAADAP//AQAlAAYAAAADAAAAAQAlAAcAAAADAAEAAQAlAAgAAAAEAP7/AQAmAAUAAAAEAP//AQAmAAYAAAAEAAAAAQAmAAcAAAAEAAEAAQAmAAgAAAA=")
 tile_set = SubResource("TileSet_xyoae")
+
+[node name="Footprint" type="Area2D" parent="." unique_id=497124744]
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Footprint" unique_id=623697949]
+position = Vector2(24, 8)
+shape = SubResource("RectangleShape2D_w3ap7")

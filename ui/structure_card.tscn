@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bvdvw7olxoasf"]
+
+[ext_resource type="Script" uid="uid://dd3s25efvgtwh" path="res://ui/structure_card.gd" id="1_2l4bd"]
+
+[node name="StructureCard" type="Button" unique_id=1679811715]
+custom_minimum_size = Vector2(110, 110)
+script = ExtResource("1_2l4bd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1603196323]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Preview" type="SubViewportContainer" parent="VBoxContainer" unique_id=1335611026]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Viewport" type="SubViewport" parent="VBoxContainer/Preview" unique_id=1878270310]
+unique_name_in_owner = true
+transparent_bg = true
+
+[node name="Price" type="Label" parent="VBoxContainer" unique_id=1370902727]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
