@@ -18,8 +18,5 @@ func _input_event(_viewport, event, _shape_idx):
 			gui_instance.get_child(0).get_child(0).room_bought.connect(_on_room_bought)
 
 func _on_room_bought() -> void:
-	get_node("/root/MainGame/PlacementManager").is_placing = false
-	get_node("/root/MainGame/PlacementManager").ghost.visible = false
-	
 	get_parent().get_child(3).queue_free() # Delete center closed door
 	queue_free()
