@@ -50,3 +50,10 @@ script = ExtResource("2_jup4d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1909656814]
 polygon = PackedVector2Array(137, -251, 137, -208, 167, -208, 167, -251)
+
+[node name="Area2D-left" type="Area2D" parent="." unique_id=1318517900]
+position = Vector2(-256, 0)
+script = ExtResource("2_jup4d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D-left" unique_id=432821156]
+polygon = PackedVector2Array(137, -251, 137, -208, 167, -208, 167, -251)
