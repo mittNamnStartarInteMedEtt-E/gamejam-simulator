@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://1qo60j8p00jx"]
+
+[ext_resource type="Shader" uid="uid://x2e0br6hynwj" path="res://assets/gfx/shaders/blue_to_red_hue.gdshader" id="1_lurjs"]
+
+[resource]
+shader = ExtResource("1_lurjs")
+shader_parameter/hue_shift = 0.350000016625
