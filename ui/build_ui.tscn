@@ -64,7 +64,7 @@ cost = 120
 [node name="RouletteTable" parent="Panel/Cards" unique_id=939877583 instance=ExtResource("2_5lqpn")]
 layout_mode = 2
 structure_scene = ExtResource("9_0r80n")
-cost = 70000
+cost = 150000
 
 [node name="SlotMachine1" parent="Panel/Cards" unique_id=1548141010 instance=ExtResource("2_5lqpn")]
 layout_mode = 2
