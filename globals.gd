@@ -30,3 +30,5 @@ var room8_scene = load("res://maps/room8.tscn")
 var room9_scene = load("res://maps/room9.tscn")
 var room10_scene = load("res://maps/room10.tscn")
 var room11_scene = load("res://maps/room11.tscn")
+
+var money := 10000
