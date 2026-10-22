@@ -32,3 +32,5 @@ var room10_scene = load("res://maps/room10.tscn")
 var room11_scene = load("res://maps/room11.tscn")
 
 var money := 10000
+var center_room_cost := 15000
+var side_room_cost := 20000
