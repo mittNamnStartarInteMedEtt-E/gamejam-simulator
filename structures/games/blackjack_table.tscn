@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://b0iokode56f3h"]
 
 [ext_resource type="Texture2D" uid="uid://bpfftllbjawtf" path="res://assets/gfx/tilesets/casino-1/2D_TopDown_Tileset_Casino_640x512.png" id="1_3vmur"]
+[ext_resource type="Script" uid="uid://xtkd2su774i5" path="res://structures/income.gd" id="2_77ebs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7mfn"]
 texture = ExtResource("1_3vmur")
@@ -1232,10 +1233,27 @@ texture = ExtResource("1_3vmur")
 [sub_resource type="TileSet" id="TileSet_xyoae"]
 sources/0 = SubResource("TileSetAtlasSource_d7mfn")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7w2x"]
+size = Vector2(48, 80)
+
 [node name="BlackJackTable" type="Node2D" unique_id=612983182]
 z_index = 3
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=997662173]
-position = Vector2(0, -19)
 tile_map_data = PackedByteArray("AAD///7/AAAUABIAAAD/////AAAUABMAAAD//wAAAAAUABQAAAD//wEAAAAUABUAAAAAAP7/AAAVABIAAAAAAP//AAAVABMAAAAAAAAAAAAVABQAAAAAAAEAAAAVABUAAAABAP7/AAAWABIAAAABAP//AAAWABMAAAABAAAAAAAWABQAAAABAAEAAAAWABUAAAD//wIAAAAUABYAAAAAAAIAAAAVABYAAAABAAIAAAAWABYAAAD///3/AAAUABEAAAA=")
 tile_set = SubResource("TileSet_xyoae")
+
+[node name="Footprint" type="Area2D" parent="." unique_id=721439148]
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Footprint" unique_id=1813673016]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_w7w2x")
+
+[node name="Income" type="Node" parent="." unique_id=1406976727]
+script = ExtResource("2_77ebs")
+income = 20
+interval = 3.0

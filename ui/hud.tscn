@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bymslxyqcm8w1"]
+
+[ext_resource type="Script" uid="uid://b665kucmigpnx" path="res://ui/hud.gd" id="1_rbyyf"]
+[ext_resource type="Theme" uid="uid://cmbtg4bxa38ne" path="res://assets/gfx/ui_themes/pixel_retro_lite/pixel_retro_lite.tres" id="2_276te"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pv4sj"]
+font_size = 32
+
+[node name="HUD" type="CanvasLayer" unique_id=1276046299]
+layer = 5
+script = ExtResource("1_rbyyf")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2096588311]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 56.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1989820917]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=115504166]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_276te")
+label_settings = SubResource("LabelSettings_pv4sj")
+
+[node name="RateLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=209636658]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=764543225]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -334.0
+offset_top = -124.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2" unique_id=1003619068]
+layout_mode = 2
+
+[node name="Controls" type="Label" parent="MarginContainer2/VBoxContainer" unique_id=1172883551]
+layout_mode = 2
+text = "Controls:
+Pan Camera: Middle Mouse Button
+Build Mode: E
+Place: Left Click
+Destroy: Right Click"

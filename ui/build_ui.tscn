@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bxro0r8lqfkt3"]
+
+[ext_resource type="Script" uid="uid://ceb7lk1k27lu6" path="res://ui/build_ui.gd" id="1_gmonm"]
+[ext_resource type="PackedScene" uid="uid://bvdvw7olxoasf" path="res://ui/structure_card.tscn" id="2_5lqpn"]
+[ext_resource type="PackedScene" uid="uid://c3bsspiefgn5l" path="res://structures/games/trashcan.tscn" id="3_obkte"]
+[ext_resource type="PackedScene" uid="uid://elj58bmjxkmr" path="res://structures/games/trashcan2.tscn" id="4_0r80n"]
+[ext_resource type="PackedScene" uid="uid://b0iokode56f3h" path="res://structures/games/blackjack_table.tscn" id="5_ijc6u"]
+[ext_resource type="PackedScene" uid="uid://ca5jj21iow6wy" path="res://structures/games/casino_cage.tscn" id="6_rlott"]
+[ext_resource type="PackedScene" uid="uid://bxrsxwo65oqqg" path="res://structures/games/dice.tscn" id="7_jptmx"]
+[ext_resource type="PackedScene" uid="uid://dqrmep3kuvok1" path="res://structures/games/plant.tscn" id="8_obkte"]
+[ext_resource type="PackedScene" uid="uid://b5bkg2w5s7ldc" path="res://structures/games/roulette_table.tscn" id="9_0r80n"]
+[ext_resource type="PackedScene" uid="uid://cnldfhe8vaumi" path="res://structures/games/slot_machine_empty.tscn" id="10_ijc6u"]
+[ext_resource type="PackedScene" uid="uid://bdqu83rn7xgdm" path="res://structures/games/slot_machine.tscn" id="11_rlott"]
+[ext_resource type="PackedScene" uid="uid://d3mxxqcqwvb31" path="res://structures/games/slot_machine2.tscn" id="12_jptmx"]
+
+[node name="BuildUI" type="CanvasLayer" unique_id=2013705883]
+layer = 10
+script = ExtResource("1_gmonm")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1455083264]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Cards" type="HBoxContainer" parent="Panel" unique_id=1533642169]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Trashcan1" parent="Panel/Cards" unique_id=1679811715 instance=ExtResource("2_5lqpn")]
+layout_mode = 2
+structure_scene = ExtResource("3_obkte")
+
+[node name="Trashcan2" parent="Panel/Cards" unique_id=1015891221 instance=ExtResource("2_5lqpn")]
+layout_mode = 2
+structure_scene = ExtResource("4_0r80n")
+cost = 30
+
+[node name="BlackjackTable" parent="Panel/Cards" unique_id=1090932825 instance=ExtResource("2_5lqpn")]
+layout_mode = 2
+structure_scene = ExtResource("5_ijc6u")
+cost = 400
+
+[node name="CasinoCage" parent="Panel/Cards" unique_id=144126841 instance=ExtResource("2_5lqpn")]
+layout_mode = 2
+structure_scene = ExtResource("6_rlott")
+cost = 100
+
+[node name="GiantDice" parent="Panel/Cards" unique_id=746307360 instance=ExtResource("2_5lqpn")]
+layout_mode = 2
+structure_scene = ExtResource("7_jptmx")
+cost = 300
+
+[node name="PottedPlant" parent="Panel/Cards" unique_id=109503764 instance=ExtResource("2_5lqpn")]
+layout_mode = 2
+structure_scene = ExtResource("8_obkte")
+cost = 120
+
+[node name="RouletteTable" parent="Panel/Cards" unique_id=939877583 instance=ExtResource("2_5lqpn")]
+layout_mode = 2
+structure_scene = ExtResource("9_0r80n")
+cost = 70000
+
+[node name="SlotMachine1" parent="Panel/Cards" unique_id=1548141010 instance=ExtResource("2_5lqpn")]
+layout_mode = 2
+structure_scene = ExtResource("10_ijc6u")
+cost = 10000
+
+[node name="SlotMachine2" parent="Panel/Cards" unique_id=541014576 instance=ExtResource("2_5lqpn")]
+layout_mode = 2
+structure_scene = ExtResource("11_rlott")
+cost = 70000
+
+[node name="SlotMachine3" parent="Panel/Cards" unique_id=516463315 instance=ExtResource("2_5lqpn")]
+layout_mode = 2
+structure_scene = ExtResource("12_jptmx")
+cost = 3000

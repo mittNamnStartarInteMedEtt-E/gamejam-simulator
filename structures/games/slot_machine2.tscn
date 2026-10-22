@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://d3mxxqcqwvb31"]
 
 [ext_resource type="Texture2D" uid="uid://b5ljiqsjpjj3o" path="res://assets/gfx/tilesets/casino-1/2D_TopDown_Tileset_Casino_1024x512.png" id="1_0g2vd"]
+[ext_resource type="Script" uid="uid://xtkd2su774i5" path="res://structures/income.gd" id="2_f5g0i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aq8k3"]
 texture = ExtResource("1_0g2vd")
@@ -1240,9 +1241,29 @@ texture = ExtResource("1_0g2vd")
 [sub_resource type="TileSet" id="TileSet_1wy2t"]
 sources/0 = SubResource("TileSetAtlasSource_aq8k3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0g2vd"]
+size = Vector2(32, 64)
+
 [node name="SlotMachine2" type="Node2D" unique_id=101594505]
 z_index = 3
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=527797683]
+position = Vector2(0, -16)
 tile_map_data = PackedByteArray("AAD///3/AAA+AAAAAAD///7/AAA+AAEAAAD/////AAA+AAIAAAD//wAAAAA+AAMAAAD//wEAAAA+AAQAAAD//wIAAAA+AAUAAAD//wMAAAA+AAYAAAAAAP3/AAA/AAAAAAAAAP7/AAA/AAEAAAAAAP//AAA/AAIAAAAAAAAAAAA/AAMAAAAAAAEAAAA/AAQAAAAAAAIAAAA/AAUAAAAAAAMAAAA/AAYAAAA=")
 tile_set = SubResource("TileSet_1wy2t")
+
+[node name="Footprint" type="Area2D" parent="." unique_id=667129558]
+position = Vector2(0, 8)
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Footprint" unique_id=1583017360]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_0g2vd")
+
+[node name="Income" type="Node" parent="." unique_id=149951719]
+script = ExtResource("2_f5g0i")
+income = 400
+interval = 5.0
