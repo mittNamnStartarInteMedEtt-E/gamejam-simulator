@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://en2064x1ecs1"]
 
-[ext_resource type="Texture2D" path="res://assets/gfx/Grön sedelbunt med dollartecken.png" id="1_am2rb"]
-
 [node name="MoneyContainer" type="Control" unique_id=1527340979]
 layout_mode = 3
 anchors_preset = 1
@@ -28,5 +26,4 @@ offset_left = 31.0
 offset_top = 111.0
 offset_right = 1359.0
 offset_bottom = 887.0
-texture = ExtResource("1_am2rb")
 expand_mode = 1
