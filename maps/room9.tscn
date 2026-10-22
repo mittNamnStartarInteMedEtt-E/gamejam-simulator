@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://bgnyy41gjj0ob"]
 
 [ext_resource type="TileSet" uid="uid://b2886os2h0nc6" path="res://assets/gfx/tilesets/casino-1/casino-1-tileset.tres" id="1_jgtdh"]
-[ext_resource type="Script" uid="uid://b4jmlvbdc5pv5" path="res://maps/open_room_picker_4.gd" id="2_jdab3"]
+[ext_resource type="Script" uid="uid://bpwtjkr8nqnme" path="res://maps/open_room_picker_9.gd" id="2_jgtdh"]
 
-[node name="Room4" type="Node2D" unique_id=1868604109]
+[node name="Room9" type="Node2D" unique_id=1868604109]
 
 [node name="DoorOpened" type="TileMapLayer" parent="." unique_id=890669913]
 position = Vector2(-368, 32)
@@ -47,7 +47,7 @@ tile_set = ExtResource("1_jgtdh")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1674482876]
 position = Vector2(-96, -80)
-script = ExtResource("2_jdab3")
+script = ExtResource("2_jgtdh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=102476586]
 polygon = PackedVector2Array(137, -251, 137, -208, 167, -208, 167, -251)
