@@ -1,15 +1,15 @@
 [gd_scene format=4 uid="uid://cr21p22s02ut2"]
 
 [ext_resource type="TileSet" uid="uid://b2886os2h0nc6" path="res://assets/gfx/tilesets/casino-1/casino-1-tileset.tres" id="1_6y7jt"]
-[ext_resource type="Script" uid="uid://eiim0vwsi2dl" path="res://open_room_picker.gd" id="2_jup4d"]
+[ext_resource type="Script" uid="uid://eiim0vwsi2dl" path="res://maps/open_room_picker_1.gd" id="2_jup4d"]
 
 [node name="Room1" type="Node2D" unique_id=1371660717]
 
-[node name="RightDoorOpen" type="TileMapLayer" parent="." unique_id=1507732756]
+[node name="RightDoorOpened" type="TileMapLayer" parent="." unique_id=1507732756]
 tile_map_data = PackedByteArray("AAD2//f/AAANABkAAAD2//j/AAANABoAAAD2//n/AAANABsAAAAJAPH/AAAhABcAAAAKAPH/AAAhABcAAAAKAPD/AAAhABcAAAAJAPD/AAAhABcAAAAJAPL/AAA+ABsAAAAKAPL/AAA+ABsAAAAIAPL/AAA+ABsAAAAIAPH/AAAFABcAAAAIAPD/AAAFABcAAAA=")
 tile_set = ExtResource("1_6y7jt")
 
-[node name="LeftDoorOpen" type="TileMapLayer" parent="." unique_id=1403416754]
+[node name="LeftDoorOpened" type="TileMapLayer" parent="." unique_id=1403416754]
 tile_map_data = PackedByteArray("AAD2//f/AAANABkAAAD2//j/AAANABoAAAD2//n/AAANABsAAAD4//H/AAAhABcAAAD4//L/AAA+ABsAAAD5//L/AAA+ABsAAAD5//H/AAAhABcAAAD4//D/AAAhABcAAAD5//D/AAAhABcAAAD6//L/AAA+ABsAAAD6//H/AAAFABcAAAD6//D/AAAFABcAAAA=")
 tile_set = ExtResource("1_6y7jt")
 

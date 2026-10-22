@@ -76,6 +76,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	# toggle placement mode
 	if event.is_action_pressed("toggle_placement_mode"):
 		_set_placing(not is_placing)
+		if is_placing == true:
+			ground_layers = get_tree().get_nodes_in_group("floors")
 		get_viewport().set_input_as_handled()
 		return
 

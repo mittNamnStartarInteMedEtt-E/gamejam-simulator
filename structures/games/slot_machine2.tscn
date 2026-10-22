@@ -1241,6 +1241,7 @@ texture = ExtResource("1_0g2vd")
 sources/0 = SubResource("TileSetAtlasSource_aq8k3")
 
 [node name="SlotMachine2" type="Node2D" unique_id=101594505]
+z_index = 3
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=527797683]
 tile_map_data = PackedByteArray("AAD///3/AAA+AAAAAAD///7/AAA+AAEAAAD/////AAA+AAIAAAD//wAAAAA+AAMAAAD//wEAAAA+AAQAAAD//wIAAAA+AAUAAAD//wMAAAA+AAYAAAAAAP3/AAA/AAAAAAAAAP7/AAA/AAEAAAAAAP//AAA/AAIAAAAAAAAAAAA/AAMAAAAAAAEAAAA/AAQAAAAAAAIAAAA/AAUAAAAAAAMAAAA/AAYAAAA=")
