@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://qcb3yrmljqu5"]
+
+[ext_resource type="PackedScene" uid="uid://b0iokode56f3h" path="res://structures/games/blackjack_table.tscn" id="2_6bm6p"]
+[ext_resource type="PackedScene" uid="uid://doibdmgdb5ikg" path="res://player/player.tscn" id="2_ykeeq"]
+[ext_resource type="PackedScene" uid="uid://cr21p22s02ut2" path="res://maps/room1.tscn" id="2_yx7mw"]
+[ext_resource type="Script" uid="uid://fcbgswqtq4is" path="res://placement_manager.gd" id="4_6bm6p"]
+[ext_resource type="PackedScene" uid="uid://ca5jj21iow6wy" path="res://structures/games/casino_cage.tscn" id="5_qpaub"]
+[ext_resource type="PackedScene" uid="uid://gipc8pqjcftj" path="res://structures/games/chips.tscn" id="6_an1vu"]
+[ext_resource type="PackedScene" uid="uid://bxrsxwo65oqqg" path="res://structures/games/dice.tscn" id="7_borgi"]
+[ext_resource type="PackedScene" uid="uid://dqrmep3kuvok1" path="res://structures/games/plant.tscn" id="8_ih6an"]
+[ext_resource type="PackedScene" uid="uid://b5bkg2w5s7ldc" path="res://structures/games/roulette_table.tscn" id="9_umrn2"]
+[ext_resource type="PackedScene" uid="uid://cc7ngo6p56v51" path="res://structures/games/security_camera.tscn" id="10_2i4tw"]
+[ext_resource type="PackedScene" uid="uid://d3mxxqcqwvb31" path="res://structures/games/slot_machine2.tscn" id="11_euc45"]
+[ext_resource type="PackedScene" uid="uid://bdqu83rn7xgdm" path="res://structures/games/slot_machine.tscn" id="12_vn0ol"]
+[ext_resource type="PackedScene" uid="uid://cnldfhe8vaumi" path="res://structures/games/slot_machine_empty.tscn" id="13_wt57k"]
+[ext_resource type="PackedScene" uid="uid://elj58bmjxkmr" path="res://structures/games/trashcan2.tscn" id="14_pk5u2"]
+[ext_resource type="PackedScene" uid="uid://c3bsspiefgn5l" path="res://structures/games/trashcan.tscn" id="15_lght5"]
+
+[node name="MainGame" type="Node2D" unique_id=870690611]
+
+[node name="Player" parent="." unique_id=2050569286 instance=ExtResource("2_ykeeq")]
+
+[node name="Rooms" type="Node2D" parent="." unique_id=2112580495]
+
+[node name="Room1" parent="Rooms" unique_id=1246615646 instance=ExtResource("2_yx7mw")]
+z_index = -1
+position = Vector2(192, 272)
+
+[node name="PlacementManager" type="Node2D" parent="." unique_id=685785412]
+script = ExtResource("4_6bm6p")
+
+[node name="Structures" type="Node2D" parent="PlacementManager" unique_id=2060396754]
+
+[node name="Templates" type="Node" parent="." unique_id=1356289960]
+
+[node name="BlackJackTable" parent="Templates" unique_id=612983182 groups=["structure_templates"] instance=ExtResource("2_6bm6p")]
+visible = false
+
+[node name="CasinoCage" parent="Templates" unique_id=1571218600 groups=["structure_templates"] instance=ExtResource("5_qpaub")]
+visible = false
+
+[node name="Chips" parent="Templates" unique_id=1997098878 groups=["structure_templates"] instance=ExtResource("6_an1vu")]
+visible = false
+
+[node name="Dice" parent="Templates" unique_id=976317186 groups=["structure_templates"] instance=ExtResource("7_borgi")]
+visible = false
+position = Vector2(-999, -99999)
+
+[node name="Plant" parent="Templates" unique_id=2092897395 groups=["structure_templates"] instance=ExtResource("8_ih6an")]
+visible = false
+position = Vector2(-999, -99999)
+
+[node name="RouletteTable" parent="Templates" unique_id=1691993494 groups=["structure_templates"] instance=ExtResource("9_umrn2")]
+visible = false
+position = Vector2(-999, -99999)
+
+[node name="SecurityCamera" parent="Templates" unique_id=176653216 groups=["structure_templates"] instance=ExtResource("10_2i4tw")]
+visible = false
+position = Vector2(-999, -99999)
+
+[node name="SlotMachine2" parent="Templates" unique_id=101594505 groups=["structure_templates"] instance=ExtResource("11_euc45")]
+visible = false
+position = Vector2(-999, -99999)
+
+[node name="SlotMachine" parent="Templates" unique_id=190978295 groups=["structure_templates"] instance=ExtResource("12_vn0ol")]
+visible = false
+position = Vector2(-999, -99999)
+
+[node name="SlotMachineEmpty" parent="Templates" unique_id=1969071525 groups=["structure_templates"] instance=ExtResource("13_wt57k")]
+visible = false
+position = Vector2(-999, -99999)
+
+[node name="Trashcan2" parent="Templates" unique_id=839769727 groups=["structure_templates"] instance=ExtResource("14_pk5u2")]
+visible = false
+position = Vector2(-999, -99999)
+
+[node name="Trashcan" parent="Templates" unique_id=653494559 groups=["structure_templates"] instance=ExtResource("15_lght5")]
+visible = false
+position = Vector2(-999, -99999)
+
+[node name="RoomPreviews" type="Node2D" parent="." unique_id=176163025]
