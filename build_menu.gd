@@ -156,3 +156,7 @@ func _input(event: InputEvent) -> void:
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			scroll.scroll_horizontal += 120
 			get_viewport().set_input_as_handled()
+<<<<<<< Updated upstream
+=======
+	
+>>>>>>> Stashed changes

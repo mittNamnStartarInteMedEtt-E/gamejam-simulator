@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bgnuwyiypifeq" path="res://build_menu.gd" id="1_rdxwr"]
 
+<<<<<<< Updated upstream
 [node name="BuildMenu" type="Control" unique_id=1400463061]
+=======
+[node name="BuildMenu" type="Control" unique_id=19028776]
+>>>>>>> Stashed changes
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
