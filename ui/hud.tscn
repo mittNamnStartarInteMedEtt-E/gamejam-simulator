@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b665kucmigpnx" path="res://ui/hud.gd" id="1_rbyyf"]
 [ext_resource type="Theme" uid="uid://cmbtg4bxa38ne" path="res://assets/gfx/ui_themes/pixel_retro_lite/pixel_retro_lite.tres" id="2_276te"]
+[ext_resource type="Script" uid="uid://idjs7mndtt3m" path="res://ui/controlstoggle.gd" id="3_546lt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pv4sj"]
 font_size = 32
@@ -36,28 +37,53 @@ unique_name_in_owner = true
 layout_mode = 2
 horizontal_alignment = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=764543225]
+[node name="Control" type="Control" parent="." unique_id=1851743009]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_546lt")
+
+[node name="Panel" type="Panel" parent="Control" unique_id=922606087]
+z_index = 19
+layout_mode = 0
+offset_left = 1589.0
+offset_top = 681.0
+offset_right = 1899.0
+offset_bottom = 890.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control" unique_id=764543225]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -334.0
-offset_top = -124.0
+offset_left = 1546.0
+offset_top = 692.0
+offset_right = 1880.0
+offset_bottom = 1040.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
+theme_override_constants/margin_right = 33
 theme_override_constants/margin_bottom = 200
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2" unique_id=1003619068]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer2" unique_id=1003619068]
+z_index = 20
 layout_mode = 2
 
-[node name="Controls" type="Label" parent="MarginContainer2/VBoxContainer" unique_id=1172883551]
+[node name="ControlsTitle" type="Label" parent="Control/MarginContainer2/VBoxContainer" unique_id=1924334489]
 layout_mode = 2
-text = "Controls:
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="Controls" type="Label" parent="Control/MarginContainer2/VBoxContainer" unique_id=1172883551]
+layout_mode = 2
+text = "Toggle Controls: C
 Pan Camera: Middle Mouse Button
-Build Mode: E
-Place: Left Click
-Destroy: Right Click"
+New Room: Left Click a Door
+Open Build Mode: E
+Build Mode Place: Left Click
+Build Mode Destroy: Right Click"
