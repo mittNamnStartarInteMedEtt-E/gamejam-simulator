@@ -39,7 +39,11 @@ func _on_button_pressed(button_name: String) -> void:
 			instance = Globals.room6_scene.instantiate()
 	
 	if "Room" in button_name:
-		rooms_node.add_child(instance)
-		instance.position = Globals.room_location_to_build_5_center + Vector2(96, -272)
-		room_bought.emit()
-		get_parent().queue_free()
+		if Globals.money > Globals.center_room_cost:
+			Globals.money -= Globals.center_room_cost
+			rooms_node.add_child(instance)
+			instance.position = Globals.room_location_to_build_5_center + Vector2(96, -272)
+			room_bought.emit()
+			get_parent().queue_free()
+		else:
+			Money._too_expensive()
