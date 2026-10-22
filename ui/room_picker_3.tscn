@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://pw0g2oxcm7gb"]
 
 [ext_resource type="Script" uid="uid://pkkc8v11ub08" path="res://ui/room_picker_3.gd" id="1_s4wd5"]
+[ext_resource type="Material" uid="uid://1qo60j8p00jx" path="res://assets/gfx/materials/blue_to_red_hue.tres" id="2_boydv"]
 
 [node name="Control" type="Control" unique_id=1575698718]
 z_index = 3
@@ -11,27 +12,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="." unique_id=111133303]
+[node name="Panel" type="Panel" parent="." unique_id=534284130]
 layout_mode = 0
-offset_right = 125.0
-offset_bottom = 141.0
+offset_right = 224.0
+offset_bottom = 184.0
+scale = Vector2(0.75, 0.75)
 
-[node name="RoomBuyButtons" type="Control" parent="Panel" unique_id=332304185]
+[node name="RoomBuyButtons" type="Control" parent="Panel" unique_id=952428056]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -42.75
-offset_right = 20.0
-offset_bottom = 60.75
+offset_top = -49.0
+offset_bottom = 79.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s4wd5")
 
-[node name="Room2Button" type="Button" parent="Panel/RoomBuyButtons" unique_id=882916969]
+[node name="Room2Button" type="Button" parent="Panel/RoomBuyButtons" unique_id=1151334175]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -41,9 +40,9 @@ offset_top = 0.5
 offset_right = 48.5
 offset_bottom = 31.5
 grow_horizontal = 2
-text = "Room 2"
+text = "Small Side Room"
 
-[node name="Room3Button" type="Button" parent="Panel/RoomBuyButtons" unique_id=1777658008]
+[node name="Room3Button" type="Button" parent="Panel/RoomBuyButtons" unique_id=537116004]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,9 +55,9 @@ offset_right = 47.0
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Room 3"
+text = "Large Side Room"
 
-[node name="Room4Button" type="Button" parent="Panel/RoomBuyButtons" unique_id=371602074]
+[node name="Room4Button" type="Button" parent="Panel/RoomBuyButtons" unique_id=105757978]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -70,30 +69,33 @@ offset_top = -31.0
 offset_right = 47.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Room 4"
+text = "Straight Hall"
 
-[node name="CloseButton" type="Button" parent="Panel" unique_id=2065918661]
+[node name="CloseButton" type="Button" parent="Panel" unique_id=1599681980]
+material = ExtResource("2_boydv")
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -25.0
-offset_top = 3.0
-offset_right = -3.0
-offset_bottom = 25.0
+offset_left = -38.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 40.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 10
 text = "X"
 clip_text = true
 expand_icon = true
 
-[node name="Label" type="Label" parent="Panel" unique_id=155399540]
+[node name="Label" type="Label" parent="Panel" unique_id=182113931]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -72.0
+offset_top = 10.0
+offset_right = 72.0
+offset_bottom = 40.0
 grow_horizontal = 2
-text = "buy room"
+text = "Buy Room - $20k"
+vertical_alignment = 1
