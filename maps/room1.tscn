@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://b2886os2h0nc6" path="res://assets/gfx/tilesets/casino-1/casino-1-tileset.tres" id="1_6y7jt"]
 [ext_resource type="Script" uid="uid://eiim0vwsi2dl" path="res://maps/open_room_picker_1.gd" id="2_jup4d"]
+[ext_resource type="Script" uid="uid://dkyptapjyfjjr" path="res://maps/open_room_picker_1_left.gd" id="3_klns2"]
 
 [node name="Room1" type="Node2D" unique_id=1371660717]
 
@@ -53,7 +54,7 @@ polygon = PackedVector2Array(137, -251, 137, -208, 167, -208, 167, -251)
 
 [node name="Area2D-left" type="Area2D" parent="." unique_id=1318517900]
 position = Vector2(-256, 0)
-script = ExtResource("2_jup4d")
+script = ExtResource("3_klns2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D-left" unique_id=432821156]
 polygon = PackedVector2Array(137, -251, 137, -208, 167, -208, 167, -251)
