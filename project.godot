@@ -17,6 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="casino-simulator"
 run/main_scene="uid://qcb3yrmljqu5"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -33,6 +34,10 @@ window/size/viewport_height=1080
 [global_group]
 
 floors=""
+
+[gui]
+
+theme/custom="res://assets/gfx/ui_themes/pixel_retro_lite/pixel_retro_lite.tres"
 
 [input]
 

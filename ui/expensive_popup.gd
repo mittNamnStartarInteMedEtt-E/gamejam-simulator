@@ -16,5 +16,5 @@ func _process(delta: float) -> void: # Good looking exponential function
 						if frame_count > 80:
 							position.y -= 2
 							if frame_count > 180:
-								get_parent().queue_free()
+								get_parent().get_parent().queue_free()
 	frame_count += 1
