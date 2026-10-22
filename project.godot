@@ -33,6 +33,10 @@ window/size/viewport_height=1080
 
 floors=""
 
+[gui]
+
+theme/custom="res://assets/gfx/ui_themes/pixel_retro_lite/pixel_retro_lite.tres"
+
 [input]
 
 move_left={
