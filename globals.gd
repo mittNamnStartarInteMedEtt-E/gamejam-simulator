@@ -1,5 +1,8 @@
 extends Node
 
+@onready var hover_sound = get_node("/root/MainGame/Sfx/HoverSound")
+@onready var buy_sound = get_node("/root/MainGame/Sfx/BuySound")
+
 var room_location_to_build = null
 var room_location_to_build_2 = null
 var room_location_to_build_3 = null

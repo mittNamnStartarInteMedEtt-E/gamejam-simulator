@@ -21,6 +21,7 @@ func _on_button_hover(button_name: String) -> void:
 			instance = Globals.room9_scene.instantiate()
 			
 	if "Room" in button_name:
+		Globals.hover_sound.play()
 		room_previews_node.add_child(instance)
 		instance.position = Globals.room_location_to_build_9 + Vector2(96, -272)
 		instance.modulate = Color(0.5, 1, 0.5, 0.5)
@@ -44,6 +45,7 @@ func _on_button_pressed(button_name: String) -> void:
 	if "Room" in button_name:
 		if Globals.money > Globals.side_room_cost:
 			Money.spend(Globals.side_room_cost)
+			Globals.buy_sound.play()
 			rooms_node.add_child(instance)
 			instance.position = Globals.room_location_to_build_9 + Vector2(96, -272)
 			room_bought.emit()

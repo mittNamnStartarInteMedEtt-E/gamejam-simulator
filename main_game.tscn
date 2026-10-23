@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://c3bsspiefgn5l" path="res://structures/games/trashcan.tscn" id="15_lght5"]
 [ext_resource type="PackedScene" uid="uid://cbschwyq6uln6" path="res://maps/outside.tscn" id="16_an1vu"]
 [ext_resource type="PackedScene" uid="uid://bymslxyqcm8w1" path="res://ui/hud.tscn" id="18_ih6an"]
+[ext_resource type="AudioStream" uid="uid://drittuyt35qaa" path="res://assets/sfx/casino-1/OGG/Cards/card_draw_01.ogg" id="20_2i4tw"]
+[ext_resource type="AudioStream" uid="uid://bqr078rk8ag1" path="res://assets/sfx/casino-1/OGG/Cards/card_deal_01.ogg" id="21_euc45"]
 
 [node name="MainGame" type="Node2D" unique_id=870690611]
 
@@ -93,3 +95,12 @@ position = Vector2(-999, -99999)
 
 [node name="Outside" parent="." unique_id=2016714679 instance=ExtResource("16_an1vu")]
 position = Vector2(176, 320)
+
+[node name="Sfx" type="Node2D" parent="." unique_id=425067370]
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="Sfx" unique_id=1438912121]
+stream = ExtResource("20_2i4tw")
+
+[node name="BuySound" type="AudioStreamPlayer" parent="Sfx" unique_id=2083773766]
+stream = ExtResource("21_euc45")
+volume_db = 3.0
