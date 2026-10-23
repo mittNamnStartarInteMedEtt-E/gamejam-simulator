@@ -64,3 +64,19 @@ func _process(_delta: float) -> void:
 func _too_expensive():
 	var gui_instance = gui_scene.instantiate()
 	get_node("/root/MainGame/Player").add_child(gui_instance)
+
+signal income_rate_changed(per_minute: float)
+
+var income_per_minute := 0.0
+
+func register_income(amount: int, interval: float) -> void:
+	if interval <= 0.0:
+		return
+	income_per_minute += amount / interval * 60.0
+	income_rate_changed.emit(income_per_minute)
+
+func unregister_income(amount: int, interval: float) -> void:
+	if interval <= 0.0:
+		return
+	income_per_minute = maxf(income_per_minute - amount / interval * 60.0, 0.0)
+	income_rate_changed.emit(income_per_minute)
