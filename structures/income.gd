@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 
 func _register() -> void:
 	# skip if already counted, not in the tree yet, or disabled (ghost/templates)
-	if _registered or not is_inside_tree() or process_mode == Node.PROCESS_MODE_DISABLED:
+	if _registered or not is_inside_tree() or not can_process():
 		return
 	Globals.register_income(income, interval)
 	_registered = true
