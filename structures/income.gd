@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 	_t += delta
 	if _t >= interval:
 		_t -= interval
-		Globals.money += income
+		Globals.add(income)

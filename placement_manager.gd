@@ -244,7 +244,7 @@ func _try_place() -> void:
 	if not _can_place(origin):
 		return
 
-	Globals.money -= selected_cost
+	Globals.spend(selected_cost)
 	var info := _info_for(selected_scene.resource_path)
 	var structure := selected_scene.instantiate() as Node2D
 	structures_folder.add_child(structure)

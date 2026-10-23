@@ -40,7 +40,7 @@ func _on_button_pressed(button_name: String) -> void:
 	
 	if "Room" in button_name:
 		if Globals.money > Globals.center_room_cost:
-			Globals.money -= Globals.center_room_cost
+			Globals.spend(Globals.center_room_cost)
 			rooms_node.add_child(instance)
 			instance.position = Globals.room_location_to_build_7_center + Vector2(-208, -272)
 			room_bought.emit()
