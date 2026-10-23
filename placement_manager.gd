@@ -144,28 +144,23 @@ func _unhandled_input(event: InputEvent) -> void:
 			ground_layers = get_tree().get_nodes_in_group("floors")
 		get_viewport().set_input_as_handled()
 		return
-
-	# place structure on left click
-	if is_placing and event.is_action_pressed("left_click"):
-		_try_place()
-		get_viewport().set_input_as_handled()
-		return
-
-	# destroy structure on right click
-	if is_placing and event.is_action_pressed("right_click"):
-		_try_destroy()
-		get_viewport().set_input_as_handled()
-		return
 		
 func _process(_delta: float) -> void:
-	if not is_placing or ghost == null:
+	if not is_placing:
 		return
 
 	# update ghost snap position and tint green/red based on validity and cost
 	var cell := _world_to_cell(get_global_mouse_position())
-	ghost.global_position = Vector2(cell * tile_size) - ghost_offset
-	var ok: bool = _can_place(cell) and Globals.money >= selected_cost
-	ghost.modulate = Color(0.5, 1, 0.5, 0.5) if ok else Color(1, 0.4, 0.4, 0.5)
+	if ghost:
+		ghost.global_position = Vector2(cell * tile_size) - ghost_offset
+		var ok: bool = _can_place(cell) and Globals.money >= selected_cost
+		ghost.modulate = Color(0.5, 1, 0.5, 0.5) if ok else Color(1, 0.4, 0.4, 0.5)
+
+	# continuous action polling while held
+	if Input.is_action_pressed("left_click"):
+		_try_place()
+	elif Input.is_action_pressed("right_click"):
+		_try_destroy()
 
 # update placement state, the build UI and the ghost together
 func _set_placing(value: bool) -> void:
@@ -204,17 +199,28 @@ func _is_floor(cell: Vector2i) -> bool:
 			return true
 	return false
 
+# check if key points to a valid, non-queued node
+func _is_key_occupied(key) -> bool:
+	if placed.has(key):
+		var node: Node2D = placed[key]
+		if is_instance_valid(node) and not node.is_queued_for_deletion():
+			return true
+	return false
+
 # check if all footprint cells are empty and on valid ground
 func _can_place(origin: Vector2i) -> bool:
 	for c in local_cells:
 		var cell := origin + c
-		if placed.has(cell):
-			return false
-		if placed.has(Vector3i(cell.x, cell.y, ghost_layer)):
+		if _is_key_occupied(cell) or _is_key_occupied(Vector3i(cell.x, cell.y, ghost_layer)):
 			return false
 		if not _is_cell_placeable(cell):
 			return false
 	return true
+
+# safely request node removal
+func _destroy_node(node: Node2D) -> void:
+	if is_instance_valid(node) and not node.is_queued_for_deletion():
+		node.queue_free()
 
 # attempt to destroy a structure at the mouse position
 func _try_destroy() -> void:
@@ -222,26 +228,29 @@ func _try_destroy() -> void:
 	
 	# Check the current ghost layer first
 	var key := Vector3i(cell.x, cell.y, ghost_layer)
-	if placed.has(key):
-		placed[key].queue_free()
+	if _is_key_occupied(key):
+		_destroy_node(placed[key])
 		return
 		
 	# Fallback: check if there's a structure on any other layer at this cell
 	for k in placed.keys():
-		if k.x == cell.x and k.y == cell.y:
-			placed[k].queue_free()
+		if k.x == cell.x and k.y == cell.y and _is_key_occupied(k):
+			_destroy_node(placed[k])
 			return
 
 # attempt structure placement at mouse position
 func _try_place() -> void:
-	if Globals.money < selected_cost:
-		Money._too_expensive()
-		return
-	
 	if selected_scene == null:
 		return
+
 	var origin := _world_to_cell(get_global_mouse_position())
 	if not _can_place(origin):
+		return
+
+	# check money only after checking valid space, and only trigger popup on initial click
+	if Globals.money < selected_cost:
+		if Input.is_action_just_pressed("left_click"):
+			Money._too_expensive()
 		return
 
 	Globals.spend(selected_cost)
