@@ -48,7 +48,7 @@ script = ExtResource("3_546lt")
 z_index = 19
 layout_mode = 0
 offset_left = 1589.0
-offset_top = 681.0
+offset_top = 656.0
 offset_right = 1899.0
 offset_bottom = 890.0
 
@@ -84,6 +84,7 @@ layout_mode = 2
 text = "Toggle Controls: C
 Pan Camera: Middle Mouse Button
 New Room: Left Click a Door
+Cycle Floors: F
 Open Build Mode: E
 Build Mode Place: Left Click
 Build Mode Destroy: Right Click"

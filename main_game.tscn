@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cnldfhe8vaumi" path="res://structures/games/slot_machine_empty.tscn" id="13_wt57k"]
 [ext_resource type="PackedScene" uid="uid://elj58bmjxkmr" path="res://structures/games/trashcan2.tscn" id="14_pk5u2"]
 [ext_resource type="PackedScene" uid="uid://c3bsspiefgn5l" path="res://structures/games/trashcan.tscn" id="15_lght5"]
-[ext_resource type="PackedScene" uid="uid://cbschwyq6uln6" path="res://outside.tscn" id="16_an1vu"]
+[ext_resource type="PackedScene" uid="uid://cbschwyq6uln6" path="res://maps/outside.tscn" id="16_an1vu"]
 [ext_resource type="PackedScene" uid="uid://bymslxyqcm8w1" path="res://ui/hud.tscn" id="18_ih6an"]
 
 [node name="MainGame" type="Node2D" unique_id=870690611]
